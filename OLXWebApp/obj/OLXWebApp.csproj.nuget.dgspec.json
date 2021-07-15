@@ -1,36 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\VisualStudioProjects\\ASP.NET Core\\OLXProject\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj": {}
+    "C:\\Users\\Selcuk\\source\\repos\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\VisualStudioProjects\\ASP.NET Core\\OLXProject\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj": {
+    "C:\\Users\\Selcuk\\source\\repos\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\VisualStudioProjects\\ASP.NET Core\\OLXProject\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Selcuk\\source\\repos\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj",
         "projectName": "OLXWebApp",
-        "projectPath": "D:\\Programming\\VisualStudioProjects\\ASP.NET Core\\OLXProject\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj",
-        "packagesPath": "C:\\Users\\timof\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\VisualStudioProjects\\ASP.NET Core\\OLXProject\\OLXWebApp\\OLXWebApp\\obj\\",
+        "projectPath": "C:\\Users\\Selcuk\\source\\repos\\OLXWebApp\\OLXWebApp\\OLXWebApp.csproj",
+        "packagesPath": "C:\\Users\\Selcuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Selcuk\\source\\repos\\OLXWebApp\\OLXWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\timof\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Selcuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Selcuk\\source\\repos\\TestConsole\\ApiOlx\\OlxSystem.csproj": {
+                "projectPath": "C:\\Users\\Selcuk\\source\\repos\\TestConsole\\ApiOlx\\OlxSystem.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -40,7 +45,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "ExcelDataReader": {
               "target": "Package",
@@ -59,6 +65,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[91.0.4472.10100, )"
             }
           },
           "imports": [
@@ -79,7 +89,83 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.116\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Selcuk\\source\\repos\\TestConsole\\ApiOlx\\OlxSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Selcuk\\source\\repos\\TestConsole\\ApiOlx\\OlxSystem.csproj",
+        "projectName": "OlxSystem",
+        "projectPath": "C:\\Users\\Selcuk\\source\\repos\\TestConsole\\ApiOlx\\OlxSystem.csproj",
+        "packagesPath": "C:\\Users\\Selcuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Selcuk\\source\\repos\\TestConsole\\ApiOlx\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Selcuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "2CaptchaAPI": {
+              "target": "Package",
+              "version": "[1.10.0, )"
+            },
+            "AngleSharp": {
+              "target": "Package",
+              "version": "[0.16.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[3.141.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
