@@ -7,6 +7,8 @@ const url = 'https://localhost:5001';
 const path = '/User/AddAdvert'; //Заменить на реальный путь отправки формы для объявления
 const pathUpload = '/User/AddPhoto'; //заменить на реальный путь отправки изображений
 
+let valCategories = [];
+
 function showPassword(id){
     console.log(id);
     const x = document.getElementById('password_'+id);
@@ -358,7 +360,7 @@ function setInputForm(attr) {
 
     }else{
          let input = document.createElement('select');
-         input.className = 'input_1';
+         input.className = 'input_1 input-select';
          input.name = attr.code;
          attr.values.forEach((val) => {
              let opt = document.createElement('option');
@@ -434,11 +436,25 @@ function setCategories(cats){
             }
             a.className = 'a_active';
         }
-        a.addEventListener('click', function (){
+        a.addEventListener('click', function () {
+
+            for (let i = 0; i < valCategories.length; i++) {
+                if (inp.value == valCategories[i].id) {
+                    if (valCategories[i].parentId == cat.parentId) {
+                        stackCategories = stackCategories.slice(0, stackCategories.length - 1);
+                        stackNames = stackNames.slice(0, stackNames.length - 1);
+                        current.children[current.children.length - 1].remove();
+                        if (document.querySelector('.a_active')) {
+                            document.querySelector('.a_active').className = '';
+                        }
+                    }
+                }
+            }
+
             stackCategories.push(cat.id);
             stackNames.push(cat.name);
             let item = document.createElement('a');
-            item.append('▼ '+cat.name);
+            item.innerHTML = '<span style="margin-right: 1.2vw;">✖</span>' + cat.name + '<span style="margin-left: 1.2vw;">➤<span>';
             item.addEventListener('click', function(){
                 let idx = stackCategories.indexOf(cat.id);
                 if(idx == stackCategories.length - 1){
@@ -451,13 +467,14 @@ function setCategories(cats){
                 }
                 stackCategories = stackCategories.slice(0, idx);
                 stackNames = stackNames.slice(0, idx);
-                console.log(stackCategories);
+                console.log('stack', stackCategories);
                 setCategories(cats);
             });
-            current.append(item);
-            if(cat.children.length > 0) {
+            
+            if (cat.children.length > 0) {
                 setCategories(cat.children);
-            }else{
+            } else {
+                item.className = 'a_hidden';
                 inp.value = cat.id;
 
                 let p = document.querySelector('#category_name');
@@ -468,9 +485,9 @@ function setCategories(cats){
                 });
                 a.className = 'a_active';
 
-                getAttributes(cat.id, cat.parentId); //New code
+                getAttributes(cat.id, cat.parentId);
             }
-            console.log('cat', cat.name);
+            current.append(item);
         });
         a.addEventListener('mouseout', function (){
 
@@ -488,6 +505,7 @@ async function loadDataCategories(){
         }).then((va)=>{
             return va.json();
         }).then((val) => {
+            valCategories = val.data;
             let cats = list_to_tree(val.data);
             let btn = document.querySelector('.dropbtn');
             btn.addEventListener('click', function(){
@@ -692,6 +710,17 @@ async function handleDropSubmit() {
 document.querySelector('#exit_btn').addEventListener('click', deleteAccounts);
 document.querySelector('#home_add_btn').addEventListener('click', saveAccounts);
 document.querySelector('#drop_btn').addEventListener('click', handleDropSubmit);
+
+document.querySelector('.download_btn').addEventListener('click', function () {
+    const scrollTarget = document.querySelector('#addvert');
+
+    const offsetPosition = scrollTarget.getBoundingClientRect().top;
+
+    window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+});
 
 getUserAccounts();
 createNewAccount();

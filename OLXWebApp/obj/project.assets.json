@@ -8756,11 +8756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/daniiltarasov/Downloads/OLXWebApp (3)/OLXWebApp/OLXWebApp/OLXWebApp.csproj",
+      "projectUniqueName": "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/OLXWebApp.csproj",
       "projectName": "OLXWebApp",
-      "projectPath": "/Users/daniiltarasov/Downloads/OLXWebApp (3)/OLXWebApp/OLXWebApp/OLXWebApp.csproj",
+      "projectPath": "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/OLXWebApp.csproj",
       "packagesPath": "/Users/daniiltarasov/.nuget/packages/",
-      "outputPath": "/Users/daniiltarasov/Downloads/OLXWebApp (3)/OLXWebApp/OLXWebApp/obj/",
+      "outputPath": "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/daniiltarasov/.config/NuGet/NuGet.Config"
@@ -8775,8 +8775,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/daniiltarasov/Downloads/OLXWebApp (3)/TestConsole/ApiOlx/OlxSystem.csproj": {
-              "projectPath": "/Users/daniiltarasov/Downloads/OLXWebApp (3)/TestConsole/ApiOlx/OlxSystem.csproj"
+            "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/OlxSystem.csproj": {
+              "projectPath": "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/OlxSystem.csproj"
             }
           }
         }

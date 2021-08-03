@@ -8,7 +8,7 @@
     <title></title>
     <link href="~/src/css/paginator/paginator.css" rel="stylesheet" />
     <link href="~/src/css/style.css" rel="stylesheet" />
-    <link href="~/src/css/new_style.css" rel="stylesheet" />
+    <link href="~/src/css/new_style.css?v=1" rel="stylesheet" />
 </head>
 <body>
     <main>
@@ -20,9 +20,7 @@
                 </section>
                 <img alt="logo" src="~/src/assets/images/LOGO.png" class="settings_logo" />
                 <section class="icons">
-                    <img alt="home" src="~/src/assets/images/home.png" class="icon" />
                     <a href="#"><img alt="settings" src="~/src/assets/images/settings.png" class="icon" /></a>
-                    <img alt="message" src="~/src/assets/images/message.png" class="icon_message" />
                     <img alt="exit" src="~/src/assets/images/exit.png" class="icon_exit" />
                 </section>
             </header>
@@ -32,11 +30,6 @@
                     <p class="main_title">Создай быстро и качественно объявления на нашем сайте!</p>
                     <p class="description">На нашем сайте ты можешь создать быстрые объявление в один клик.</p>
                     <btn class="download_btn">Загрузить объявления</btn>
-                </section>
-                <section class="contact_icons">
-                    <img src="~/src/assets/images/facebook.png" alt="facebook" class="contact_icon_size" />
-                    <img src="~/src/assets/images/twitter.png" alt="twitter" class="contact_icon_size" />
-                    <img src="~/src/assets/images/telegram.png" alt="telegram" class="contact_icon_size" />
                 </section>
             </section>
             <img src="~/src/assets/images/arrow_down.png" alt="arrow-down" class="arrow_down" />
@@ -108,7 +101,7 @@
                 </form>
             </section>
         </section>
-        <section class="download_file_box">
+        <section class="download_file_box" id="addvert">
             <form class="download_file_form" id="parameter" onsubmit="return false;">
                 <p class="download_title">Загрузить объявления</p>
                 <section class="box_1">
@@ -136,7 +129,7 @@
                     <h2>Контактная информация</h2>
                     <section class="box_1">
                         <p>Местоположение</p>
-                        <select name="location" class="location input_1" id="form_location">
+                        <select name="location" class="location input_1 input-select" id="form_location">
                         </select>
                     </section>
                     <section>
@@ -156,19 +149,17 @@
                         </section>
                         <input type="text" name="category_id" class="hiden-input" id="category_id">
                     </section>
-                </section>
-                <div style="position: absolute; left: 0; width: 100vw;display: flex; justify-content: center;" id="drop-container">
-                    <div style="display: flex; align-items: start;">
-                        <div id="drop-current" class="drop-cont">
-
-                        </div>
-                        <div id="myDropdown1" class="dropdown-content drop-cont">
-                            <a href="#">Електроника</a>
-                            <a href="#">Транспорт</a>
-                            <a href="#">Обмен</a>
+                    <div style="position: absolute; left: 0; display: flex; bottom: 7vh; justify-content: center; width: 100%;" id="drop-container">
+                        <div style="width: 100%;">
+                            <div id="drop-current" class="drop-cont"></div>
+                            <div id="myDropdown1" class="dropdown-content drop-cont">
+                                <a href="#">Електроника</a>
+                                <a href="#">Транспорт</a>
+                                <a href="#">Обмен</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
                 <section id="category-attr">
                 </section>
                 <button class="down_btn" id="drop_btn">
@@ -183,11 +174,6 @@
                 <p>Сообщение</p>
                 <p>Добавить акаунт</p>
                 <p>Загрузить объявления</p>
-            </section>
-            <section class="footer_icons">
-                <img src="~/src/assets/images/facebook.png" alt="facebook" class="footer_icon_size" />
-                <img src="~/src/assets/images/twitter.png" alt="twitter" class="footer_icon_size" />
-                <img src="~/src/assets/images/telegram.png" alt="telegram" class="footer_icon_size" />
             </section>
         </footer>
     </main>
@@ -310,7 +296,7 @@
         }
 
     </script>
-    <script src="~/src/js/home/dynamic.js?v=10"></script>
+    <script src="~/src/js/home/dynamic.js?v=14"></script>
     <script src="~/src/js/home/script_home.js"></script>
     <script src="~/src/js/home/paginator/paginator.js"></script>
 </body>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tn6HuF3NS5yFgZ2Ct1Rfofw/JfiJZKaBrE7gI5Crem3e4CqYU46ks2qG9nGLHM9J+SoM7uJjpbbAEsSmBAJjMw==",
+  "dgSpecHash": "EVmpPPmTpAqIVf0Sa/gAPO5zZSjRNLpwYv6c0ahN81D0Kr3hvVZF8xuZl/sE2xEzKJus+onkTSn5H8jI62+L/g==",
   "success": true,
-  "projectFilePath": "/Users/daniiltarasov/Downloads/OLXWebApp (3)/OLXWebApp/OLXWebApp/OLXWebApp.csproj",
+  "projectFilePath": "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/OLXWebApp.csproj",
   "expectedPackageFiles": [
     "/Users/daniiltarasov/.nuget/packages/2captchaapi/1.10.0/2captchaapi.1.10.0.nupkg.sha512",
     "/Users/daniiltarasov/.nuget/packages/anglesharp/0.16.0/anglesharp.0.16.0.nupkg.sha512",
