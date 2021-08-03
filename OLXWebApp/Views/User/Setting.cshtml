@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Главная страница";
+    ViewData["PageTitle"] = "Главная страница пользователя (пока пустая)";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/src/css/paginator/paginator.css" rel="stylesheet" />
+    <link href="~/src/css/settings.css" rel="stylesheet" />
+    <link href="/src/css/paginator/paginator.css" rel="stylesheet" />
+    <link href="/src/css/style.css" rel="stylesheet" />
+    <link href="/src/css/new_style.css" rel="stylesheet" />
+</head>
+<body>
+    <main class="settings_main">
+        <header class="nav">
+            <section class="connect_account">
+                <p>Подключено 5 аккаунтов</p>
+                <img alt="human" src="~/src/assets/images/icon_human.png" class="icon_human" />
+            </section>
+            <img alt="logo" src="~/src/assets/images/LOGO.png" class="settings_logo" />
+            <section class="icons">
+                <img alt="home" src="~/src/assets/images/home.png" class="icon" />
+                <img alt="settings" src="~/src/assets/images/settings.png" class="icon" />
+                <img alt="message" src="~/src/assets/images/message.png" class="icon_message" />
+                <img alt="exit" src="~/src/assets/images/exit.png" class="icon_exit" />
+            </section>
+        </header>
+        <form class="settings_form" id="settings_form">
+            <p class="settings_text">Настройки</p>
+            <section class="settings_fields">
+                <section class="box">
+                    <p>Логин:</p>
+                    <input type="email" value="irapankovich@gmail.com" class="field" name="email" id="email" />
+                </section>
+                <section class="box">
+                    <p>Пароль:</p>
+                    <input type="password" value="test123" class="field pass_field" name="password" id="password" />
+                    <img alt="eye" src="~/src/assets/images/eye.png" class="eye" />
+                </section>
+                <section class="box">
+                    <p>Имя:</p>
+                    <input type="text" value="Ira" class="field" name="name" id="name" />
+                </section>
+                <section class="box">
+                    <p>Телефон:</p>
+                    <input type="text" value="+790 517 672 23" class="field" name="phone" id="phone" />
+                </section>
+                <section class="box box_fl-st">
+                    <p>Подключено аккаунтов:</p>
+                    <input type="text" value="5" disabled class="field count_acc" name="countAccounts" id="countAccounts" />
+                </section>
+                <section class="box box_fl-st">
+                    <p>Загружено объявлений:</p>
+                    <input type="text" value="12" disabled class="field count_adv" name="countAdvert" id="countAdvert" />
+                </section>
+                <section class="box array-box" style="align-items: baseline;">
+                    <p>Прокси:</p>
+                    <div id="inputs_proxy">
+                        <input type="text" value="190.93.176.11:8080" class="field array-item-input" />
+                        <input type="text" value="190.93.176.11:8080" class="field array-item-input" />
+                    </div>
+                    <img alt="plus" src="~/src/assets/images/plus.png" class="plus_btn" id="proxy_btn" />
+                </section>
+                <section class="box">
+                    <p>Ключ для reCAPTCHA:</p>
+                    <input type="text" value="6Le5-c0SAAAAAHXM3sIrsXBlRh" class="field" name="captcha" id="captcha" />
+                </section>
+            </section>
+            <btn class="save_btn" id="save_btn">Сохранить</btn>
+        </form>
+        <section class="square"></section>
+    </main>
+    <script src="~/src/js/home/settings.js"></script>
+</body>
+</html>
+
