@@ -21,5 +21,7 @@ namespace OLXWebApp.Database
         void AddOLXAccountIfNeed(OLXAccountModel accModel, User owner);
         OLXAccount GetOLXAccountById(int id);
         void DeleteOLXAccount(OLXAccount account);
+        int GetCountAccountsOlx(User owner);
+        void AddPhoto(Photo photo);
     }
 }

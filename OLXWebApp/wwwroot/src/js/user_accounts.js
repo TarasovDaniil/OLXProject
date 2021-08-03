@@ -1,5 +1,4 @@
-﻿
-function showPassword1() {
+﻿function showPassword1() {
     const x = document.getElementById("pass_1");
     if (x.type === "password") {
         x.type = "text";
@@ -56,15 +55,6 @@ function showPassword6() {
 function getFile() {
     document.getElementById("upfile").click();
 }
-
-function sub(obj) {
-    const file = obj.value;
-    const fileName = file.split("\\");
-    document.getElementById("file_btn").innerHTML = fileName[fileName.length - 1];
-    document.myForm.submit();
-    event.preventDefault();
-}
-
 
 function change_height() {
 

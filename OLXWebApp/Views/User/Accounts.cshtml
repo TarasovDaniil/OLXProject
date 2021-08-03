@@ -3,133 +3,124 @@
     ViewData["PageTitle"] = "Главная страница пользователя (пока пустая)";
 }
 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/src/css/paginator/paginator.css" rel="stylesheet" />
+    <link href="~/src/css/style.css" rel="stylesheet" />
+    <link href="~/src/css/new_style.css" rel="stylesheet" />
+</head>
+<body>
     <main>
+        <section class="home_main">
+            <header class="nav">
+                <section class="connect_account">
+                    <p>Подключено 5 аккаунтов</p>
+                    <img alt="human" src="~/src/assets/images/icon_human.png" class="icon_human" />
+                </section>
+                <img alt="logo" src="~/src/assets/images/LOGO.png" class="settings_logo" />
+                <section class="icons">
+                    <img alt="home" src="~/src/assets/images/home.png" class="icon" />
+                    <a href="#"><img alt="settings" src="~/src/assets/images/settings.png" class="icon" /></a>
+                    <img alt="message" src="~/src/assets/images/message.png" class="icon_message" />
+                    <img alt="exit" src="~/src/assets/images/exit.png" class="icon_exit" />
+                </section>
+            </header>
 
-        <!--<section class="home_main">-->
-        <header class="nav">
-            <section class="connect_account">
-                <p>Подключено 5 аккаунтов</p>
-                <img alt="human" src="~/src/assets/images/icon_human.png" class="icon_human" />
+            <section class="home_content">
+                <section class="main_text">
+                    <p class="main_title">Создай быстро и качественно объявления на нашем сайте!</p>
+                    <p class="description">На нашем сайте ты можешь создать быстрые объявление в один клик.</p>
+                    <btn class="download_btn">Загрузить объявления</btn>
+                </section>
+                <section class="contact_icons">
+                    <img src="~/src/assets/images/facebook.png" alt="facebook" class="contact_icon_size" />
+                    <img src="~/src/assets/images/twitter.png" alt="twitter" class="contact_icon_size" />
+                    <img src="~/src/assets/images/telegram.png" alt="telegram" class="contact_icon_size" />
+                </section>
             </section>
-            <img alt="logo" src="~/src/assets/images/LOGO.png" class="settings_logo" />
-            <section class="icons">
-                <img alt="home" src="~/src/assets/images/home.png" class="icon" />
-                <img alt="settings" src="~/src/assets/images/settings.png" class="icon" />
-                <img alt="message" src="~/src/assets/images/message.png" class="icon_message" />
-                <img alt="exit" src="~/src/assets/images/exit.png" class="icon_exit" />
-            </section>
-        </header>
-        <!--<section class="home_content">
-        <section class="main_text">
-            <p class="main_title">Создай быстро и качественно объявления на нашем сайте!</p>
-            <p class="description">На нашем сайте ты можешь создать быстрые объявление в один клик.</p>
-            <btn class="download_btn">Загрузить объявления</btn>
+            <img src="~/src/assets/images/arrow_down.png" alt="arrow-down" class="arrow_down" />
         </section>
-        <section class="contact_icons">
-            <img src="~/src/assets/images/facebook.png" alt="facebook" class="contact_icon_size" />
-            <img src="~/src/assets/images/twitter.png" alt="twitter" class="contact_icon_size" />
-            <img src="~/src/assets/images/telegram.png" alt="telegram" class="contact_icon_size" />
-        </section>
-    </section>
-    <img src="~/src/assets/images/arrow_down.png" alt="arrow-down" class="arrow_down" -->
-        <!--</section>-->
-
-
-
         <section class="accounts">
+            <!--
+            <form name="valform" enctype="multipart/form-data" onsubmit="return mySubmitFunction(this);">
+                <label>
+                    <input name="test1" type="text"/>
+                </label>
+                <label>
+                    <input name="test2" type="text"/>
+                </label>
+                <button type="submit">Go</button>
+            </form>
+            <script>
+                function mySubmitFunction(e){
+                    const data = new FormData(e)
+                    const form = Array.from(data.entries());
+
+                    let itog = {};
+                    for (const [name, value] of form) {
+                        itog[name] = value;
+                    }
+                    console.log(itog);
+                    return false;
+                }
+            </script>-->
             <section class="squares">
                 <section class="square_left_home"></section>
                 <section class="square_home"></section>
             </section>
             <section class="table_box">
                 <p class="connected_acc">подключены аккаунты</p>
-                <table class="table color_white">
-                    <tr>
-                        <th class="log_in_title">Логин</th>
-                        <th>Пароль</th>
-                        <th>Имя</th>
-                        <th>Телефон</th>
-                    </tr>
-                    @foreach (var user in ViewBag.Accounts)
-                    {
+                <table class="table" id="accounts">
+                    <thead>
                         <tr>
-                            <td>
-                                <label>
-                                    <input type="checkbox" />
-                                </label>
-                                @user.Login
-                            </td>
-                            <td>
-                                @user.Password
-                            </td>
-                            <td>@user.Name</td>
-                            <td>@user.Phone</td>
+                            <th class="log_in_title">Логин</th>
+                            <th>Пароль</th>
+                            <th>Имя</th>
+                            <th>Телефон</th>
                         </tr>
-                    }
+                    </thead>
+                    <tbody>
+                    </tbody>
                 </table>
-                <!--<section class="add_delete_btn">
-                    <button class="add_btn">
-                        Добавить аккаунт <img src="~/src/assets/images/plus_black.png" alt="plus"
-                                              class="icon_btn">
-                    </button>
-                    <button class="exit_btn">
-                        Удалить аккаунт <img src="~/src/assets/images/exit_white.png" alt="exit"
-                                             class="icon_btn">
-                    </button>
+                <section id="btns" style="margin-top: 2rem;">
+                </section>
+                <section class="add_delete_btn">
+
+                    <!--<button class="add_btn" id="add_btn">Добавить аккаунт <img src="../../assets/plus_black.png" alt="plus" class="icon_btn"></button>-->
+                    <div></div>
+                    <button class="exit_btn" id="exit_btn">Удалить аккаунт<img src="~/src/assets/images/exit_white.png" alt="exit" class="icon_btn"></button>
+
                 </section>
                 <form class="add_new_form">
-                    <table>
-                        <tr class="tr_titles">
-                            <th class="log_in_sec">Логин</th>
-                            <th class="pass_sec">Пароль</th>
-                            <th class="name_sec">Имя</th>
-                            <th class="tele_sec">Телефон</th>
-                            <img src="~/src/assets/images/orange_plus.png" alt="plus" class="orange_plus" />
-                        </tr>
-                        <tr>
-                            <td>
-                                <label class="first_inputs">
-                                    <input type="checkbox" />
-                                    <input type="text" value="tum.pinjkloprtl@gmail.com" class="enter_inputs" />
-                                </label>
-                            </td>
-                            <td>
-                                <label>
-                                    <input type="text" value="myPassword123" class="enter_inputs" />
-                                </label>
-                            </td>
-                            <td>
-                                <input type="text" value="Paul" class="enter_inputs" />
-                            </td>
-                            <td>
-                                <input type="text" value="+790 587 662 28" class="enter_inputs" />
-                            </td>
-                        </tr>
+                    <table id="new_account">
+                        <thead>
+                            <tr class="tr_titles">
+                                <th class="log_in_sec">Логин</th>
+                                <th class="pass_sec">Пароль</th>
+                                <th class="name_sec">Имя</th>
+                                <th class="tele_sec">Телефон</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
                     </table>
-                    <button class="home_add_btn">Добавить</button>
+                    <button class="home_add_btn" id="home_add_btn" type="button">Добавить</button>
                 </form>
-                <!--<section class="add_delete_btn">-->
             </section>
         </section>
-        <section class="download_file_box" id="height_params">
-            <form class="download_file_form" id="parameter">
+        <section class="download_file_box">
+            <form class="download_file_form" id="parameter" onsubmit="return false;">
                 <p class="download_title">Загрузить объявления</p>
                 <section class="box_1">
                     <p>Заголовок</p>
-                    <input type="text" class="input_1" name="Title"/>
+                    <input type="text" class="input_1" name="title" />
                 </section>
                 <section class="box_1">
                     <p>Описание</p>
-                    <input type="text" class="input_1 desc_field" name="Description"/>
+                    <input type="text" class="input_1 desc_field" name="description" />
                 </section>
-                <section class="box_1">
-                    <p>Параметры товара</p>
-                    <input type="text" class="input_1 param_goods" name="ParamsString"/>
-                </section>
-                <section class="box_1">
-                    <p>Город</p>
-                    <input type="text" class="input_1" name="City"/>
-                </section>
+                <input type="hidden" name="advertiser_type" value="tGngz6dAFmTqDNUh" />
+                <input type="hidden" name="external_id" id="external_id">
                 <section class="box_5">
                     <section id="file_btn" onclick="getFile()">
                         <p>Фото</p>
@@ -138,102 +129,49 @@
                         </section>
                     </section>
                     <section style='height: 0px;width: 0px; overflow:hidden;'>
-                        <input id="upfile" type="file" value="upload" onchange="sub(this)" multiple name="photos" />
+                        <input id="upfile" type="file" multiple value="upload" onchange="sub(this)" name="file[]" />
                     </section>
                 </section>
-                <input type="checkbox" id="hidden-checker" />
-                <section class="box_1 parameter_btn block" onclick="change_height()">
-                    <label class="block-toggler" for="hidden-checker"></label>
-                    <p class="parameter_text">Дополнительные параметры</p>
-                    <img src="~/src/assets/images/chevron_big_down.png" alt="chevron" class="chevron">
+                <section class="contacts">
+                    <h2>Контактная информация</h2>
+                    <section class="box_1">
+                        <p>Местоположение</p>
+                        <select name="location" class="location input_1" id="form_location">
+                        </select>
+                    </section>
+                    <section>
+                        <p>Контактное лицо*</p>
+                        <input class="input_1" type="text" placeholder="Ваше имя" name="name">
+                    </section>
+                    <section>
+                        <p>Номер телефона</p>
+                        <input class="input_1" type="text" name="phone">
+                    </section>
                 </section>
-
-                <section class="other_parameters hidden-block">
-                    <section class="category_input dropbtn" style="margin-left: 1vw" onclick="dropBtn()">
-                        <p>Категория</p>
+                <section class="other_parameters">
+                    <section class="category_input dropbtn">
+                        <p id="category_name">Категория</p>
                         <section class="right_clip" style="border-left: 0">
                             <img src="~/src/assets/images/chevron_big_down.png" class="chevron" />
                         </section>
+                        <input type="text" name="category_id" class="hiden-input" id="category_id">
                     </section>
-
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="#">Електроника</a>
-                        <a href="#">Транспорт</a>
-                        <a href="#">Обмен</a>
-                    </div>
-
-                    <section class="box_1" style="margin-left: 1vw">
-                        <p>Цена</p>
-                        <input type="text" class="input_1" />
-                    </section>
-
-                    <section class="box_1" style="margin-left: 1vw">
-                        <p>Валюта</p>
-                        <section class="money">
-                            <section class="input_1 money_input dropbtn1" style="font-size: .73vw" onclick="dropBtn1()">
-                            </section>
-                            <section class="right_clip" style="border-left: 0">
-                                <img src="~/src/assets/images/chevron_big_down.png" class="chevron money_chevron">
-                            </section>
-                        </section>
-                    </section>
-
-                    <div id="myDropdown1" class="dropdown-content1">
-                        <a href="#">Грн</a>
-                        <a href="#">Руб</a>
-                        <a href="#">Доллар</a>
-                    </div>
-
-                    <section class="box_1" style="margin-left: 1vw">
-                        <p>Состояние</p>
-                        <section class="money">
-                            <section class="input_1 money_input dropbtn2" style="font-size: .73vw" onclick="dropBtn2()">
-                            </section>
-                            <section class="right_clip" style="border-left: 0">
-                                <img src="~/src/assets/images/chevron_big_down.png" class="chevron money_chevron">
-                            </section>
-                        </section>
-                    </section>
-
-                    <div id="myDropdown2" class="dropdown-content2">
-                        <a href="#">Новый</a>
-                        <a href="#">Б/У</a>
-                    </div>
-
-                    <section class="box_1" style="margin-left: 1vw">
-                        <p>Часное лицо/Бизнес</p>
-                        <section class="money">
-                            <section class="input_1 money_input dropbtn3" style="font-size: .73vw" onclick="dropBtn3()">
-                            </section>
-                            <section class="right_clip" style="border-left: 0">
-                                <img src="~/src/assets/images/chevron_big_down.png" class="chevron money_chevron">
-                            </section>
-                        </section>
-                    </section>
-
-                    <div id="myDropdown3" class="dropdown-content3">
-                        <a href="#">Часное лицо</a>
-                        <a href="#">Бизнес</a>
-                    </div>
-
-                    <section class="box_1" style="margin-left: 1vw">
-                        <p>Местоположение</p>
-                        <section class="money">
-                            <section class="input_1 money_input dropbtn4" style="font-size: .73vw" onclick="dropBtn4()">
-                            </section>
-                            <section class="right_clip" style="border-left: 0">
-                                <img src="~/src/assets/images/chevron_big_down.png" class="chevron money_chevron">
-                            </section>
-                        </section>
-                    </section>
-
-                    <div id="myDropdown4" class="dropdown-content4">
-                        <a href="#">Киев</a>
-                        <a href="#">Львов</a>
-                        <a href="#">Одесса</a>
-                    </div>
                 </section>
-                <button class="down_btn">
+                <div style="position: absolute; left: 0; width: 100vw;display: flex; justify-content: center;" id="drop-container">
+                    <div style="display: flex; align-items: start;">
+                        <div id="drop-current" class="drop-cont">
+
+                        </div>
+                        <div id="myDropdown1" class="dropdown-content drop-cont">
+                            <a href="#">Електроника</a>
+                            <a href="#">Транспорт</a>
+                            <a href="#">Обмен</a>
+                        </div>
+                    </div>
+                </div>
+                <section id="category-attr">
+                </section>
+                <button class="down_btn" id="drop_btn">
                     <p>Загрузить</p>
                 </button>
             </form>
@@ -253,3 +191,128 @@
             </section>
         </footer>
     </main>
+    <script>
+        function getFile() {
+            document.getElementById("upfile").click();
+        }
+
+        function sub(obj) {
+            let fill = [];
+
+            for (let i = 0; i < document.getElementById('upfile').files.length; i++) {
+                fill.push('<p>' + document.getElementById('upfile').files[i].name + '</p>');
+            }
+            document.getElementById("file_btn").className = 'files-btn'
+            document.getElementById("file_btn").innerHTML = fill.join('<br/>');
+            //document.myForm.submit();
+
+            event.preventDefault();
+        }
+
+
+        function change_height() {
+
+            document.getElementById('height_params').style.cssText = 'height: 147vh; padding-top: 3rem;';
+            document.getElementById('parameter').setAttribute("class", "parameter");
+
+            document.getElementById('param_box_visible').style.cssText = "display: block; transition: .3s easy"
+        }
+
+        function dropBtn() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+
+                let dropdowns = document.getElementsByClassName("dropdown-content");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+
+        function dropBtn1() {
+            document.getElementById("myDropdown1").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn1')) {
+
+                let dropdowns = document.getElementsByClassName("dropdown-content1");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function dropBtn2() {
+            document.getElementById("myDropdown2").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn2')) {
+
+                let dropdowns = document.getElementsByClassName("dropdown-content2");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function dropBtn3() {
+            document.getElementById("myDropdown3").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn3')) {
+
+                let dropdowns = document.getElementsByClassName("dropdown-content3");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function dropBtn4() {
+            document.getElementById("myDropdown4").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn4')) {
+
+                let dropdowns = document.getElementsByClassName("dropdown-content4");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+    </script>
+    <script src="~/src/js/home/dynamic.js?v=10"></script>
+    <script src="~/src/js/home/script_home.js"></script>
+    <script src="~/src/js/home/paginator/paginator.js"></script>
+</body>
+</html>
+

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using OLXWebApp.Database.Context;
 using OLXWebApp.Database.DbModels;
@@ -12,7 +13,7 @@ namespace OLXWebApp.Database
     public class DbMethods : IDbMethods
     {
         private ApplicationContext db;
-
+        
         public DbMethods(ApplicationContext appContext)
         {
             this.db = appContext;
@@ -97,6 +98,21 @@ namespace OLXWebApp.Database
         {
             db.OLXAccount.Remove(account);
             db.SaveChanges();
+        }
+
+        public int GetCountAccountsOlx(User owner)
+        {
+            var countOlxAccounts = db.OLXAccount.Where(user => user.UserOwnerId == owner.Id).Count();
+            return countOlxAccounts;
+        }
+
+        public void AddPhoto(Photo photo)
+        {
+            if (photo != null)
+            {
+               var result = db.Add(photo);
+                db.SaveChanges();
+            }
         }
     }
 }

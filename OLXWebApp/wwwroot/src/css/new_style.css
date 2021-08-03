@@ -703,6 +703,7 @@ td input {
     cursor: pointer;
     margin-left: 1vw;
     margin-top: 2vw;
+    margin-right: 0px;
 }
 
 footer {

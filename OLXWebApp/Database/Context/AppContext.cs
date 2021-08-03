@@ -12,6 +12,7 @@ namespace OLXWebApp.Database.Context
         public DbSet<User> User { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<OLXAccount> OLXAccount { get; set; }
+        public DbSet<Photo> Photo { get; set; }
 
         private IDbMethods _methods;
         public IDbMethods Methods { 
