@@ -154,7 +154,7 @@ function getUsersPagination(users){
 
 async function getUserAccountsPaginator(page){
     try {
-        const response = await fetch(url + '/User/GetAccountsOlx?page=' + page, {
+        const response = await fetch('/User/GetAccountsOlx?page=' + page, {
             method: "GET"
         });
         return await response.json();
@@ -165,7 +165,7 @@ async function getUserAccountsPaginator(page){
 
 async function getCountAccounts() {
     try {
-        const response = await fetch(url + '/User/GetCountAccountsOlx', {
+        const response = await fetch('/User/GetCountAccountsOlx', {
             method: "POST"
         });
         let count = await response.json();
@@ -221,7 +221,7 @@ async function deleteAccounts(){
         let it = val.split("_");
         if(it[1]){
             try {
-                await fetch(url + '/User/DeleteOLXAccount?id='+parseInt(it[1]), {
+                await fetch('/User/DeleteOLXAccount?id='+parseInt(it[1]), {
                     method: "GET"
                 });
 
@@ -243,7 +243,7 @@ async function saveAccounts(){
         }
     }
     try {
-        const response = await fetch(url + '/User/AddAccountOlx', {
+        const response = await fetch('/User/AddAccountOlx', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -406,7 +406,7 @@ let attributes = [];
 
 async function getAttributes(id, parentId){
     try {
-        await fetch(url+'/User/GetAttribute?id='+id, {
+        await fetch('/User/GetAttribute?id='+id, {
             method: "POST"
         }).then((va)=>{
             return va.json();
@@ -501,7 +501,7 @@ function setCategories(cats){
 
 async function loadDataCategories(){
     try {
-        await fetch(url+'/User/GetCategories', {
+        await fetch('/User/GetCategories', {
             method: "POST"
         }).then((va)=>{
             return va.json();
@@ -528,7 +528,7 @@ async function loadDataCities() {
     let inp = document.querySelector('#external_id');
     inp.value = new Date().getTime();
     try {
-        await fetch(url+'/User/GetCities', {
+        await fetch('/User/GetCities', {
             method: "POST"
         }).then((va)=>{
             return va.json();
@@ -601,7 +601,7 @@ async function uploadFiles(images) {
         form.append('images', val);
     });
     try {
-        const response = await fetch(url + pathUpload, {
+        const response = await fetch(pathUpload, {
             method: "POST",
             body: form
         });
