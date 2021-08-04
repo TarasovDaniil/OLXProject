@@ -21,11 +21,9 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Files\Photos\" />
-    <Folder Include="wwwroot\src\css\paginator\" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Views\User\Settings.cshtml" />
-    <Content Remove="wwwroot\src\css\paginator\" />
   </ItemGroup>
 </Project>

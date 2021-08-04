@@ -1,0 +1,43 @@
+﻿.btns > * {
+    margin: 10px 10px 10px 0px;
+    display: inline-block;
+}
+
+.btn[disabled] {
+    pointer-events: none;
+    background-color: #DFDFDF !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #9F9F9F !important;
+    cursor: default;
+}
+
+.btn {
+    display: inline-block;
+    letter-spacing: .5px;
+    text-align: center;
+    padding: 7px 14px;
+    background-color: #FFD58E;
+    color: #0B0D38;
+    border-radius: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    transition: background-color .3s ease-out;
+    margin: 0 2px;
+}
+
+    .btn.active {
+        border: 2px solid #FFD58E;
+        padding: 6px 13px;
+    }
+
+    .btn:hover {
+        background-color: #FFD58E;
+    }

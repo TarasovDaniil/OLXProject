@@ -688,7 +688,7 @@ td input {
 }
 
 .down_btn {
-    width: 27.8vw;
+    width: 27vw;
     min-height: 5vh;
     border-radius: 20px;
     border: 0;
@@ -701,9 +701,8 @@ td input {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-left: 1vw;
     margin-top: 2vw;
-    margin-right: 0px;
+    margin-bottom: 2vw;
 }
 
 footer {

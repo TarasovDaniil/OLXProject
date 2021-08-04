@@ -112,7 +112,7 @@ function createElementPassword(id, password){
     input.id = 'password_'+id;
 
     let img = document.createElement('img');
-    img.src = '../../assets/eye.png';
+    img.src = '/src/assets/images/eye.png';
     img.alt = 'eye';
     img.className = 'pass_eye';
     img.onclick = function(e){
