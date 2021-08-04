@@ -221,12 +221,17 @@ async function deleteAccounts(){
         let it = val.split("_");
         if(it[1]){
             try {
-                await fetch('/User/DeleteOLXAccount?id='+parseInt(it[1]), {
+                let response = await fetch('/User/DeleteOLXAccount?id='+parseInt(it[1]), {
                     method: "GET"
                 });
+                if (response.ok) {
+                    getUserAccounts();
+                    snackbar('success', 'Аккаунт удален!', 'Аккаунт успешно удален', 4000);
+                }
 
             }catch (e){
                 console.log(e.message);
+                snackbar('danger', 'Аккаунт не удален!', 'При попытке удаления аккаунта произошла ошибка', 4000);
             }
         }
     }
@@ -253,10 +258,12 @@ async function saveAccounts(){
         if(response.ok){
             createNewAccount();
             getUserAccounts();
+            snackbar('success', 'Аккаунт добавлен!', 'Аккаунт успешно добавлен', 4000);
         }
 
     }catch (e){
         console.log(e.message);
+        snackbar('danger', 'Аккаунт не добавлен!', 'При попытке добавить аккаунт произошла ошибка', 4000);
     }
 }
 
@@ -662,19 +669,24 @@ async function serializeData(data) {
 
 async function handleDropSubmit() {
     let form = document.forms['parameter'];
-    console.log(form);
     let data = Array.from(new FormData(form))
         .reduce((r, [k, v]) => { r[k] = v; return r }, {});
 
     try {
+        let isFail = false;
         for (const [key, value] of Object.entries(data)) {
             if (key == 'File') {
-                if (!value.name) return;
+                if (!value.name) { isFail = true; break; }
             } else if (requiredCodes.indexOf(key) !== -1) {
-                return;
+                isFail = true;
+                break;
             } else {
-                if (!value) return;
+                if (!value) { isFail = true; break; }
             }
+        }
+        if (isFail) {
+            snackbar('danger', 'Ошибка объявления!', 'Заполните форму полностью и попробуйте еще раз', 4000);
+            return;
         }
     } catch (e) {
         console.log(e.message);
@@ -702,17 +714,15 @@ async function handleDropSubmit() {
                 '                    <section class="right_clip">\n' +
                 '                        <img src="/src/assets/images/clip.png" class="clip"/>\n' +
                 '                    </section>';
+            snackbar('success', 'Объявление добавлено!', 'Объявление успешно добавлено', 4000);
         }
     } catch (e) {
         console.log(e.message);
+        snackbar('danger', 'Объявление не добавлено!', 'При попытке добавления объявления произошла ошибка', 4000);
     }
 }
 
-document.querySelector('#exit_btn').addEventListener('click', deleteAccounts);
-document.querySelector('#home_add_btn').addEventListener('click', saveAccounts);
-document.querySelector('#drop_btn').addEventListener('click', handleDropSubmit);
-
-document.querySelector('.download_btn').addEventListener('click', function () {
+function toAnchor() {
     const scrollTarget = document.querySelector('#addvert');
 
     const offsetPosition = scrollTarget.getBoundingClientRect().top;
@@ -721,9 +731,53 @@ document.querySelector('.download_btn').addEventListener('click', function () {
         top: offsetPosition,
         behavior: 'smooth'
     });
-});
+}
+let timeOb = null;
+
+function hideSnackbar() {
+    clearTimeout(timeOb);
+    let snack = document.querySelector('#snackbar');
+
+    snack.className = snack.className.replace("snack_show", "");
+}
+
+function showSnackbar(type, title, text, timeout) {
+    let snack = document.querySelector('#snackbar');
+
+    if (type == 'danger') {
+        snack.className = 'snack_danger snack_show';
+    } else if (type == 'success') {
+        snack.className = 'snack_success snack_show';
+    }
+
+    let titleEl = document.querySelector('#snack_title');
+    titleEl.innerText = title;
+
+    let textEl = document.querySelector('#snack_text');
+    textEl.innerText = text;
+
+    timeOb = setTimeout(hideSnackbar, timeout);
+}
+
+function snackbar(type, title, text, timeout) {
+    if (timeOb != null) {
+        hideSnackbar();
+
+        setTimeout(function () { showSnackbar(type, title, text, timeout) }, 500);
+    } else {
+        showSnackbar(type, title, text, timeout);
+    }
+}
+
+document.querySelector('#exit_btn').addEventListener('click', deleteAccounts);
+document.querySelector('#home_add_btn').addEventListener('click', saveAccounts);
+document.querySelector('#drop_btn').addEventListener('click', handleDropSubmit);
+
+document.querySelector('.download_btn').addEventListener('click', toAnchor);
+document.querySelector('#snack_close').addEventListener('click', hideSnackbar);
 
 getUserAccounts();
 createNewAccount();
 loadDataCategories();
 loadDataCities();
+

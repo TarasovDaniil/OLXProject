@@ -1092,7 +1092,7 @@ body {
 }
 
 .icons {
-    width: 17.5vw;
+    width: 9.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1295,4 +1295,69 @@ body {
 }
 .a_hidden{
     display: none !important;
+}
+
+.snack_show{
+    right: 1.2vw !important;
+    opacity: 1 !important;
+}
+
+#snackbar {
+    position: fixed;
+    bottom: 1.2vw;
+    right: -34.4vw;
+    width: 30vw;
+    transition: all 0.5s ease;
+    background: #fff;
+    border-radius: 4px;
+    padding: 1.5vw;
+    opacity: 0;
+}
+.snack_danger:before {
+    content: '';
+    background: #f50057;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px;
+}
+.snack_success:before {
+    content: '';
+    background: #00e676;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px;
+}
+#snack_close {
+    position: absolute;
+    right: 0.7rem;
+    top: 0.7rem;
+    background: #ddd;
+    border-radius: 1.5rem;
+    display: inline-block;
+    padding: .1rem .444rem;
+    cursor: pointer;
+}
+    #snack_close > img {
+        width: .5rem;
+        height: .5rem;
+        position: relative;
+        bottom: .1rem;
+    }
+#snack_title{
+    padding-right: 2.5vw;
+    padding-bottom: .7rem;
+    margin: 0;
+}
+#snack_text{
+    margin: 0;
+    font-size: .7rem;
+}
+button:active, .btn:active, .download_btn:active {
+    background: #ffc055;
 }
