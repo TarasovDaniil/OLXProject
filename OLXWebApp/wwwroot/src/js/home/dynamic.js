@@ -56,12 +56,12 @@ function createElementCheckBoxInput(token){
     return td;
 }
 
-function createElementInput(token, placeholder, name){
+function createElementInput(token, placeholder, name, type){
     let td = document.createElement('td');
     let label = document.createElement('label');
 
     let input = document.createElement('input');
-    input.type = 'text';
+    input.type = type;
     input.name = name+'_'+token;
     input.placeholder = placeholder;
     input.className = 'enter_inputs';
@@ -208,9 +208,9 @@ function createNewAccount(){
 
     tr.append(
         createElementCheckBoxInput(token),
-        createElementInput(token, 'Пароль', 'Password'),
-        createElementInput(token, 'Имя', 'Name'),
-        createElementInput(token, 'Номер телефона', 'Phone'),
+        createElementInput(token, 'Пароль', 'Password', 'password'),
+        createElementInput(token, 'Имя', 'Name', 'text'),
+        createElementInput(token, 'Номер телефона', 'Phone', 'number'),
     )
     console.log(newAccounts);
     table.append(tr);
@@ -252,6 +252,7 @@ async function saveAccounts(){
         });
         if(response.ok){
             createNewAccount();
+            getUserAccounts();
         }
 
     }catch (e){
