@@ -13,9 +13,9 @@ namespace OLXWebApp.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public int CountAddedAdvert { get; set; }
-        public int CountOlxAccount { get; set; }
-        public List<string> Proxies { get; set; }
+        public int? CountAddedAdvert { get; set; }
+        public int? CountOlxAccount { get; set; }
+        public List<string>? Proxies { get; set; }
         public string CaptchaKey { get;set;}
     }
 }

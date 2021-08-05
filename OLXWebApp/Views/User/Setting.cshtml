@@ -7,11 +7,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <link href="~/src/css/paginator/paginator.css" rel="stylesheet" />
-    <link href="~/src/css/settings.css" rel="stylesheet" />
-    <link href="/src/css/paginator/paginator.css" rel="stylesheet" />
+    <link href="~/src/css/settings.css?v=1" rel="stylesheet" />
+    <link href="/src/css/paginator.css" rel="stylesheet" />
     <link href="/src/css/style.css" rel="stylesheet" />
-    <link href="/src/css/new_style.css" rel="stylesheet" />
+    <link href="/src/css/new_style.css?v=1" rel="stylesheet" />
 </head>
 <body>
     <main class="settings_main">
@@ -22,46 +21,48 @@
             </section>
             <img alt="logo" src="~/src/assets/images/LOGO.png" class="settings_logo" />
             <section class="icons">
-                <img alt="home" src="~/src/assets/images/home.png" class="icon" />
-                <img alt="settings" src="~/src/assets/images/settings.png" class="icon" />
-                <img alt="message" src="~/src/assets/images/message.png" class="icon_message" />
-                <img alt="exit" src="~/src/assets/images/exit.png" class="icon_exit" />
+                <a asp-controller="User" asp-action="Accounts"><img alt="home" src="~/src/assets/images/home.png" class="icon" /></a>
+                    <img alt="exit" src="~/src/assets/images/exit.png" class="icon_exit" />
             </section>
         </header>
-        <form class="settings_form" id="settings_form">
+        <form class="settings_form" id="settings_form" method="post" asp-controller="User" asp-action="Setting" asp-antiforgery="false" enctype="application/x-www-form-urlencoded" >
             <p class="settings_text">Настройки</p>
             <section class="settings_fields">
                 <section class="box">
                     <p>Логин:</p>
-                    <input type="email" value="@Model.Email" class="field" name="email" id="email" />
+                    <input type="text" value="@Model.Login" class="field" asp-for="Login" id="login" />
                 </section>
                 <section class="box">
                     <p>Пароль:</p>
-                    <input type="password" value="test123" class="field pass_field" name="password" id="password" />
-                    <img alt="eye" src="~/src/assets/images/eye.png" class="eye" />
+                    <input type="password" value="@Model.Password" class="field pass_field" asp-for="Password" id="password" />
+                    <img alt="eye" src="~/src/assets/images/eye.png" class="eye" id="show_password" />
+                </section>
+                <section class="box">
+                    <p>Email:</p>
+                    <input type="email" value="@Model.Email" class="field" asp-for="Email" id="email" />
                 </section>
                 <section class="box">
                     <p>Имя:</p>
-                    <input type="text" value="@Model.Name" class="field" name="name" id="name" />
+                    <input type="text" value="@Model.Name" class="field" asp-for="Name" id="name" />
                 </section>
                 <section class="box">
                     <p>Телефон:</p>
-                    <input type="text" value="Model.Phone" class="field" name="phone" id="phone" />
+                    <input type="text" value="@Model.Phone" class="field" asp-for="Phone" id="phone" />
                 </section>
                 <section class="box box_fl-st">
                     <p>Подключено аккаунтов:</p>
-                    <input type="text" value="5" disabled class="field count_acc" name="countAccounts" id="countAccounts" />
+                    <input type="text" value="@Model.CountOlxAccount" disabled class="field count_acc" asp-for="CountOlxAccount" id="countAccounts" />
                 </section>
                 <section class="box box_fl-st">
                     <p>Загружено объявлений:</p>
-                    <input type="text" value="12" disabled class="field count_adv" name="countAdvert" id="countAdvert" />
+                    <input type="text" value="@Model.CountAddedAdvert" disabled class="field count_adv" asp-for="CountAddedAdvert" id="countAdvert" />
                 </section>
                 <section class="box array-box" style="align-items: baseline;">
                     <p>Прокси:</p>
                     <div id="inputs_proxy">
-                        @{
-                            foreach(string proxy in Model.Proxies){
-                                <input type="text" value="@proxy" class="field array-item-input" />
+                        @{ foreach (string proxy in Model.Proxies)
+                            {
+                                <input type="text" value="@proxy" class="field array-item-input" asp-for="Proxies" />
                             }
                         }
                     </div>
@@ -69,14 +70,18 @@
                 </section>
                 <section class="box">
                     <p>Ключ для reCAPTCHA:</p>
-                    <input type="text" value="@Model.CaptchaKey" class="field" name="captcha" id="captcha" />
+                    <input type="text" value="@Model.CaptchaKey" class="field" asp-for="CaptchaKey" id="captcha" />
                 </section>
             </section>
-            <btn class="save_btn" id="save_btn">Сохранить</btn>
+            <button type="submit" class="save_btn" id="save_btn">Сохранить</button>
         </form>
         <section class="square"></section>
     </main>
-    <script src="~/src/js/home/settings.js"></script>
+    <script>
+        let proxies = @Model.Proxies.Count;
+        console.log(proxies);
+    </script>
+    <script src="~/src/js/home/settings.js?v=6"></script>
 </body>
 </html>
 

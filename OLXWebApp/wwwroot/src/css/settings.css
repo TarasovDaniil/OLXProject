@@ -221,6 +221,6 @@
 
     .array-box .plus_btn {
         position: absolute;
-        top: calc(2vh - 4px);
-        right: -3vh;
+        top: calc(2vh - 1px);
+        right: -4vh;
     }

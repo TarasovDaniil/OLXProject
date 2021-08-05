@@ -385,15 +385,18 @@ namespace OLXWebApp.Controllers
             return Guid.NewGuid().ToString();
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Setting()
         {
-            return View(new UserSettings() { Proxies = new List<string>()});
+            return View(new UserSettings() { CountAddedAdvert = 0, CountOlxAccount = 0, Proxies = new List<string>() }) ;
         }
 
+        [AllowAnonymous]
         [HttpPost]
-        public IActionResult Setting([FromBody]UserSettings settings)
+        public IActionResult Setting(UserSettings settings)
         {
+            
             ViewData["Settings"] = settings;
             ViewBag.Setting = settings;
 
