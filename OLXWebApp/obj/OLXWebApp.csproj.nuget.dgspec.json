@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/OLXWebApp.csproj": {}
+    "C:\\Users\\Selcuk\\Source\\Repos\\TarasovDaniil\\OLXProject\\OLXWebApp\\OLXWebApp.csproj": {}
   },
   "projects": {
-    "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/OLXWebApp.csproj": {
+    "C:\\Users\\Selcuk\\Source\\Repos\\TarasovDaniil\\OLXProject\\OLXWebApp\\OLXWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/OLXWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Selcuk\\Source\\Repos\\TarasovDaniil\\OLXProject\\OLXWebApp\\OLXWebApp.csproj",
         "projectName": "OLXWebApp",
-        "projectPath": "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/OLXWebApp.csproj",
-        "packagesPath": "/Users/daniiltarasov/.nuget/packages/",
-        "outputPath": "/Users/daniiltarasov/Projects/OLXProject/OLXWebApp/obj/",
+        "projectPath": "C:\\Users\\Selcuk\\Source\\Repos\\TarasovDaniil\\OLXProject\\OLXWebApp\\OLXWebApp.csproj",
+        "packagesPath": "C:\\Users\\Selcuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Selcuk\\Source\\Repos\\TarasovDaniil\\OLXProject\\OLXWebApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/daniiltarasov/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Selcuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/OlxSystem.csproj": {
-                "projectPath": "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/OlxSystem.csproj"
+              "C:\\Users\\Selcuk\\Source\\Repos\\TestConsole\\ApiOlx\\OlxSystem.csproj": {
+                "projectPath": "C:\\Users\\Selcuk\\Source\\Repos\\TestConsole\\ApiOlx\\OlxSystem.csproj"
               }
             }
           }
@@ -83,26 +89,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/OlxSystem.csproj": {
+    "C:\\Users\\Selcuk\\Source\\Repos\\TestConsole\\ApiOlx\\OlxSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/OlxSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Selcuk\\Source\\Repos\\TestConsole\\ApiOlx\\OlxSystem.csproj",
         "projectName": "OlxSystem",
-        "projectPath": "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/OlxSystem.csproj",
-        "packagesPath": "/Users/daniiltarasov/.nuget/packages/",
-        "outputPath": "/Users/daniiltarasov/Projects/TestConsole/ApiOlx/obj/",
+        "projectPath": "C:\\Users\\Selcuk\\Source\\Repos\\TestConsole\\ApiOlx\\OlxSystem.csproj",
+        "packagesPath": "C:\\Users\\Selcuk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Selcuk\\Source\\Repos\\TestConsole\\ApiOlx\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/daniiltarasov/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Selcuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -153,7 +165,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

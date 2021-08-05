@@ -26,7 +26,7 @@ namespace OLXWebApp.Controllers
         private IWebHostEnvironment _appEnvironment;
         OlxApi olxApi;
 
-        public UserController(ApplicationContext db, IWebHostEnvironment appEnvironment )
+        public UserController(ApplicationContext db, IWebHostEnvironment appEnvironment)
         {
             this.db = db;
             _appEnvironment = appEnvironment;
@@ -249,7 +249,7 @@ namespace OLXWebApp.Controllers
             OLXAccount delAcc = db.Methods.GetOLXAccountById(id);
             if (delAcc != null)
             {
-               db.Methods.DeleteOLXAccount(delAcc);
+                db.Methods.DeleteOLXAccount(delAcc);
             }
 
             return RedirectToAction("Accounts", "User");
@@ -259,10 +259,10 @@ namespace OLXWebApp.Controllers
         [HttpPost]
         public async Task<JsonResult> GetCategories()
         {
-            var jsonCa = await olxApi.GetCategorius(new AOuthRequest 
-           {
-               Access_token = token,
-           });
+            var jsonCa = await olxApi.GetCategorius(new AOuthRequest
+            {
+                Access_token = token,
+            });
             return Json(jsonCa);
         }
 
@@ -270,7 +270,7 @@ namespace OLXWebApp.Controllers
         [HttpPost]
         public async Task<JsonResult> GetAttribute(int id)
         {
-            var jsonAtt = await olxApi.GetAttributes(id,new AOuthRequest 
+            var jsonAtt = await olxApi.GetAttributes(id, new AOuthRequest
             {
                 Access_token = token,
             });
@@ -303,7 +303,7 @@ namespace OLXWebApp.Controllers
         {
             var cities = new Cities();
             cities.Data = new List<OlxSystem.Classes.Models.Datum>();
-            var jsonCity = await olxApi.GetCitiesAsync(new AOuthRequest 
+            var jsonCity = await olxApi.GetCitiesAsync(new AOuthRequest
             {
                 Access_token = token
             });
@@ -314,7 +314,7 @@ namespace OLXWebApp.Controllers
         [HttpGet]
         public JsonResult GetAccountsOlx(int page)
         {
-            User user = new User { Id = 1};//db.User.Where(u => u.Login == User.Identity.Name).FirstOrDefault();
+            User user = new User { Id = 1 };//db.User.Where(u => u.Login == User.Identity.Name).FirstOrDefault();
             List<OLXAccount> OLXAccount = oLXAccounts.Skip(5 * (page - 1)).Take(5).ToList();
 
             //var accounts = db.OLXAccount.Where(a => a.UserOwnerId == user.Id).Skip(5*(page - 1)).Take(5).ToList();
@@ -324,7 +324,7 @@ namespace OLXWebApp.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult AddAccountOlx([FromForm]OLXAccount olxAccount)
+        public JsonResult AddAccountOlx([FromForm] OLXAccount olxAccount)
         {
             //User user = db.Methods.GetUserByLogin(User.Identity.Name);
             //db.Methods.AddOLXAccountIfNeed(olxAccount, user);
@@ -345,7 +345,7 @@ namespace OLXWebApp.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task AddAdvert([FromBody]OLXProduct product)
+        public async Task AddAdvert([FromBody] OLXProduct product)
         {
             foreach (var aOuth in aOuthRequests)
             {
@@ -385,8 +385,22 @@ namespace OLXWebApp.Controllers
             return Guid.NewGuid().ToString();
         }
 
+        [HttpGet]
         public IActionResult Setting()
         {
+            return View(new UserSettings() { Proxies = new List<Database.DbModels.Proxy>()});
+        }
+
+        [HttpPost]
+        public IActionResult Setting([FromBody]UserSettings settings)
+        {
+            ViewData["Settings"] = settings;
+            ViewBag.Setting = settings;
+
+            if (settings != null)
+            {
+                return View(settings);
+            }
             return View();
         }
     }

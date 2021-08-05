@@ -1,4 +1,5 @@
-﻿@{
+﻿@model UserSettings
+@{
     ViewData["Title"] = "Главная страница";
     ViewData["PageTitle"] = "Главная страница пользователя (пока пустая)";
 }
@@ -32,7 +33,7 @@
             <section class="settings_fields">
                 <section class="box">
                     <p>Логин:</p>
-                    <input type="email" value="irapankovich@gmail.com" class="field" name="email" id="email" />
+                    <input type="email" value="@Model.Email" class="field" name="email" id="email" />
                 </section>
                 <section class="box">
                     <p>Пароль:</p>
@@ -41,11 +42,11 @@
                 </section>
                 <section class="box">
                     <p>Имя:</p>
-                    <input type="text" value="Ira" class="field" name="name" id="name" />
+                    <input type="text" value="@Model.Name" class="field" name="name" id="name" />
                 </section>
                 <section class="box">
                     <p>Телефон:</p>
-                    <input type="text" value="+790 517 672 23" class="field" name="phone" id="phone" />
+                    <input type="text" value="Model.Phone" class="field" name="phone" id="phone" />
                 </section>
                 <section class="box box_fl-st">
                     <p>Подключено аккаунтов:</p>
@@ -58,14 +59,17 @@
                 <section class="box array-box" style="align-items: baseline;">
                     <p>Прокси:</p>
                     <div id="inputs_proxy">
-                        <input type="text" value="190.93.176.11:8080" class="field array-item-input" />
-                        <input type="text" value="190.93.176.11:8080" class="field array-item-input" />
+                        @{
+                            foreach(Proxy proxy in Model.Proxies){
+                                <input type="text" value="@proxy.Value" class="field array-item-input" />
+                            }
+                        }
                     </div>
                     <img alt="plus" src="~/src/assets/images/plus.png" class="plus_btn" id="proxy_btn" />
                 </section>
                 <section class="box">
                     <p>Ключ для reCAPTCHA:</p>
-                    <input type="text" value="6Le5-c0SAAAAAHXM3sIrsXBlRh" class="field" name="captcha" id="captcha" />
+                    <input type="text" value="@Model.CaptchaKey" class="field" name="captcha" id="captcha" />
                 </section>
             </section>
             <btn class="save_btn" id="save_btn">Сохранить</btn>

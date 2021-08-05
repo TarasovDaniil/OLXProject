@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OLXWebApp", "OLXWebApp\OLXWebApp.csproj", "{4D8A2C35-3444-4314-B2D3-C7FF3E3C3AF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlxSystem", "..\TestConsole\ApiOlx\OlxSystem.csproj", "{9CE4D9D5-CD16-4B06-B742-34B26E4E54B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlxSystem", "..\..\TestConsole\ApiOlx\OlxSystem.csproj", "{AD508913-26AD-4A57-9167-C51FC4D3357E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4D8A2C35-3444-4314-B2D3-C7FF3E3C3AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D8A2C35-3444-4314-B2D3-C7FF3E3C3AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D8A2C35-3444-4314-B2D3-C7FF3E3C3AF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CE4D9D5-CD16-4B06-B742-34B26E4E54B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CE4D9D5-CD16-4B06-B742-34B26E4E54B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CE4D9D5-CD16-4B06-B742-34B26E4E54B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CE4D9D5-CD16-4B06-B742-34B26E4E54B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD508913-26AD-4A57-9167-C51FC4D3357E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD508913-26AD-4A57-9167-C51FC4D3357E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD508913-26AD-4A57-9167-C51FC4D3357E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD508913-26AD-4A57-9167-C51FC4D3357E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
