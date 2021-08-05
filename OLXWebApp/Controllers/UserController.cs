@@ -388,7 +388,7 @@ namespace OLXWebApp.Controllers
         [HttpGet]
         public IActionResult Setting()
         {
-            return View(new UserSettings() { Proxies = new List<Database.DbModels.Proxy>()});
+            return View(new UserSettings() { Proxies = new List<string>()});
         }
 
         [HttpPost]
