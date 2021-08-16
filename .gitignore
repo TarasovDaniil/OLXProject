@@ -1,3 +1,6 @@
 OLXWebApp/bin/
 OLXWebApp/obj/
 .vs/
+TestConsole/TestConsole/obj/
+TestConsole/TestConsole/bin/
+TestConsole/ApiOlx/obj/
